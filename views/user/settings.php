@@ -7,11 +7,6 @@ use yii\helpers\Html;
 $title = Yii::t('cms', 'User settings');
 $this->title = $title . ' | ' . Yii::$app->name;
 
-// Breadcrumbs
-$this->params['breadcrumbs'] = [
-    $title,
-];
-
 ?>
 <h1><?= Html::encode($title) ?></h1>
 
