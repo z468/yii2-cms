@@ -1,0 +1,15 @@
+{
+  "name": "yii2-cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/z468/yii2-cms.git",
+  "author": "Dmitry Khlystov <dkhlystov@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "uglify-js": "^3.10.0"
+  },
+  "scripts": {
+    "build": "node-sass assets/src/scss/main.scss assets/dist/css/main.css --output-style compressed && uglifyjs assets/src/js/*.js -m -c -o assets/dist/js/main.js"
+  }
+}

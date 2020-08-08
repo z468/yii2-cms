@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#content {
+    padding-top: $header-height;
+    padding-left: $sidebar-width;
+
+    @include media-breakpoint-down(lg) {
+        padding-left: 0;
+    }
+}
+
+#content > .navbar {
+    height: $header-height;
+}
+
+#content > .breadcrumbs-wrap {
+    .breadcrumb {
+        font-size: $font-size-sm;
+        margin-left: -$grid-gutter-width / 2;
+        margin-right: -$grid-gutter-width / 2;
+    }
+}
+
+h1 {
+    margin-bottom: $spacer * 2;
+}
+
+.alert {
+    margin-top: $spacer;
+}

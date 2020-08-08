@@ -1,0 +1,17 @@
+/* Form buttons */
+.form-buttons .btn {
+    min-width: 100px;
+}
+
+/* Form required field label */
+.form-group.required > label {
+    position: relative;
+
+    &::after {
+        color: $danger;
+        content: '*';
+        display: inline-block;
+        margin: 0 -10px 0 3px;
+        width: 7px;
+    }
+}

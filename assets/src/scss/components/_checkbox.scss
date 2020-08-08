@@ -1,0 +1,62 @@
+$checkbox-size: 20px !default;
+$checkbox-color: $white !default;
+$checkbox-bg: $gray-300 !default;
+$checkbox-bg-hover: $gray-400 !default;
+$checkbox-bg-checked: $primary !default;
+
+input[type="checkbox"]:not(.default) {
+    cursor: pointer;
+    height: $checkbox-size;
+    margin-right: $spacer / 4;
+    margin-top: 0;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: $checkbox-size;
+
+    &::before {
+        background-color: $checkbox-bg;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: background-color 0.15s ease-in-out;
+        width: 100%;
+    }
+
+    &::after {
+        border: solid $white;
+        border-width: 0 3px 3px 0;
+        content: '';
+        height: 12px;
+        left: 50%;
+        margin-left: -3px;
+        margin-top: -7.5px;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: rotate(45deg);
+        width: 7px;
+    }
+
+    &:hover {
+        &::before {
+            background-color: $checkbox-bg-hover;
+        }
+    }
+
+    &:checked {
+        &::before {
+            background-color: $checkbox-bg-checked;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+
+        &:hover::before {
+            background-color: darken($checkbox-bg-checked, 7.5%);
+        }
+    }
+}

@@ -1,0 +1,102 @@
+.sidebar-wrap {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: $header-height;
+    transition: left .2s;
+    width: $sidebar-width;
+
+    @include media-breakpoint-down(lg) {
+        left: -$sidebar-width;
+        top: 0;
+    }
+
+    #sidebar {
+        height: 100%;
+        overflow-y: auto;
+        position: relative;
+        z-index: 10;
+
+        .sidebar-header {
+            display: none;
+            height: $header-height;
+            padding-left: $navbar-padding-x;
+
+            @include media-breakpoint-down(lg) {
+                align-items: center;
+                display: flex;
+            }
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        > ul {
+            border-top: 1px solid $gray-700;
+            padding-left: 0;
+
+            > li {
+                border-bottom: 1px solid $gray-700;
+                padding: ($spacer * 0.35) ($spacer * 0.75);
+            }
+        }
+
+        a {
+            color: $white;
+            display: block;
+            position: relative;
+
+            @include hover-focus {
+                color: rgba($white, .75);
+                text-decoration: none;
+            }
+
+            > i {
+                color: rgba($white, .3);
+                text-align: center;
+                width: 22px;
+            }
+        }
+
+        [data-toggle="collapse"] {
+            &::after {
+                border-bottom: 0;
+                border-left: 0.3em solid transparent;
+                border-right: 0.3em solid transparent;
+                border-top: 0.3em solid;
+                content: "";
+                display: inline-block;
+                height: 0;
+                margin-left: 0.255em;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                vertical-align: 0.255em;
+                width: 0;
+            }
+        }
+    }
+
+    .sidebar-overlay {
+        background: rgba(0, 0, 0, 0.5);
+        height: 0;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        transition: opacity 0.2s ease-in-out;
+        width: 100vw;
+        z-index: 9;
+    }
+
+    &.active {
+        left: 0;
+
+        .sidebar-overlay {
+            height: 100vh;
+            opacity: 1;
+        }
+    }
+}

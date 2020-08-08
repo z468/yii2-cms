@@ -1,0 +1,84 @@
+$list-icon-size: $font-size-base * $line-height-base * 2;
+
+.grid-view {
+    .not-set {
+        color: desaturate($danger, 10%);
+        font-style: italic;
+    }
+
+    th {
+        white-space: nowrap;
+    }
+
+    /* Add sorting icons to gridview sort links */
+    a.asc::after, a.desc::after {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-style: normal;
+        font-weight: 900;
+        line-height: 1;
+        padding-left: 5px;
+    }
+
+    a.asc::after {
+        content: "\f15d";
+    }
+
+    a.desc::after {
+        content: "\f15e";
+    }
+
+    .sort-numerical {
+        a.asc::after {
+            content: "\f162";
+        }
+
+        a.desc::after {
+            content: "\f163";
+        }
+    }
+
+    .sort-ordinal {
+        a.asc:after {
+            content: "\f160";
+        }
+
+        a.desc:after {
+            content: "\f161";
+        }
+    }
+
+    td.action {
+        text-align: center;
+        white-space: nowrap;
+    }
+    
+    td.action-1 {
+        width: 2.3em;
+    }
+
+    td.action-2 {
+        width: 3.5em;
+    }
+
+    td.action-3 {
+        width: 4.7em;
+    }
+
+    tr.table-inactive {
+        background-color: rgba($black, .1) !important;
+        opacity: .5;
+    }
+
+    .list-icon {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        float: left;
+        height: $list-icon-size;
+        margin-right: $spacer * .5;
+        width: $list-icon-size;
+    }
+}
